@@ -1,17 +1,17 @@
 const sql = require("mssql");
 
 const config = {
-  user: "admin",
-  password: "Password1!",
-  server: "database-2.cei9klb5jbif.us-east-1.rds.amazonaws.com", // You can use 'localhost\\instance' to connect to named instance
-  database: "demo"
+  user: "username",
+  password: "password",
+  server: "servername", // You can use 'localhost\\instance' to connect to named instance
+  database: "database",
 };
 
 // async/await style:
 const pool1 = new sql.ConnectionPool(config);
 const pool1Connect = pool1.connect();
 
-pool1.on("error", err => {
+pool1.on("error", (err) => {
   // ... error handler
 });
 
